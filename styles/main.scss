@@ -1,0 +1,516 @@
+$f-light: 300;
+$f-regular: 400;
+$f-semi-bold: 600;
+$f-bold: 700;
+$f-extra-bold: 800;
+
+// colours
+$dark: #242424;
+$primary: #4361ee;
+$secondary: #5e60ce;
+$tertiary: #22b0db;
+
+// global
+body {
+  font-family: "Nunito", sans-serif;
+  color: $dark;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+.page-wrapper {
+  margin: 50px 0;
+
+  .back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: $primary;
+    font-weight: $f-semi-bold;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.today {
+  background-color: $primary;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 20px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    span {
+      &:last-child {
+        margin-left: 10px;
+        font-size: 1.25rem;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__sun-times {
+    display: flex;
+
+    > div {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      span {
+        display: block;
+
+        &:first-child {
+          font-weight: $f-bold;
+        }
+
+        &:last-child {
+          font-weight: $f-light;
+        }
+      }
+    }
+  }
+
+  &__right-content {
+    text-align: center;
+    margin-left: 20px;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon-wrapper {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+
+    > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 140px !important;
+      height: 140px !important;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.hourly {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  overflow: auto;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__box-wrapper {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &:first-child {
+      min-width: 110px;
+      padding-left: 0;
+    }
+
+    &:last-child {
+      min-width: 110px;
+      padding-right: 0;
+    }
+  }
+
+  &__box {
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: $secondary;
+    color: #fff;
+
+    img {
+      width: 100%;
+      max-width: 100px;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__time {
+    font-size: 1rem;
+    font-weight: $f-light;
+
+    &--now {
+      font-weight: $f-semi-bold;
+    }
+  }
+}
+
+.weekly {
+  margin-top: 20px;
+
+  &__title {
+    opacity: 0.9;
+    margin-bottom: 15px;
+    font-size: 2rem;
+
+    span {
+      font-weight: $f-light;
+    }
+  }
+
+  &__card {
+    background-color: $tertiary;
+    border-radius: 10px;
+    color: #fff;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  &__left-content {
+    display: flex;
+    align-items: center;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    > div {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      &:first-child {
+        min-width: 135px;
+      }
+    }
+
+    h3 {
+      margin-bottom: 0;
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      span {
+        &:last-child {
+          margin-left: 10px;
+          font-size: 0.875rem;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &__sun-times {
+    display: flex;
+
+    > div {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      span {
+        display: block;
+
+        &:first-child {
+          font-weight: $f-bold;
+        }
+
+        &:last-child {
+          font-weight: $f-light;
+        }
+      }
+    }
+  }
+
+  &__right-content {
+    text-align: center;
+    margin-left: 20px;
+    min-width: 120px;
+
+    h5 {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon-wrapper {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+
+    > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.home {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 10px;
+    border: 2px solid $primary;
+    font-size: 1.25rem;
+    color: $dark;
+    font-family: "Nunito", sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  ul {
+    position: absolute;
+    top: calc(100% + 10px);
+    width: 100%;
+    padding: 5px 15px;
+    margin: 0;
+    list-style: none;
+    border: 2px solid $primary;
+    border-radius: 10px;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    li {
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: $dark;
+        font-weight: $f-semi-bold;
+        transition: all 0.3s ease;
+        width: 100%;
+        padding: 10px 0;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__no-results {
+    padding: 15px 0;
+  }
+}
+
+.places {
+  margin-top: 30px;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  &__box {
+    flex: 0 0 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    a {
+      display: block;
+      width: 100%;
+      position: relative;
+      text-decoration: none;
+
+      &:hover {
+        span {
+          opacity: 1;
+        }
+
+        img {
+          opacity: 0.8;
+        }
+      }
+
+      span {
+        text-decoration: none;
+        font-weight: $f-bold;
+        color: $dark;
+        font-size: 1.25rem;
+        opacity: 0.9;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    padding-bottom: 125%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    img {
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: $primary;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  // box-shadow: 0 0 10px $primary, 0 0 5px $primary;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: $primary;
+  border-left-color: $primary;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
