@@ -31,7 +31,6 @@ export default function SearchBox({ placeholder }) {
         const match = city.name.toLowerCase().startsWith(value.toLowerCase());
 
         if (match) {
-          console.log("match");
           const cityData = {
             ...city,
             slug: `${city.name.toLowerCase().replace(/ /g, "-")}-${city.id}`,
@@ -59,7 +58,6 @@ export default function SearchBox({ placeholder }) {
         <ul>
           {results.length > 0 ? (
             results.map((city) => {
-              console.log(city.slug);
               return (
                 <li key={city.slug}>
                   <Link href={`/location/${city.slug}`}>

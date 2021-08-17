@@ -2,7 +2,7 @@ import moment from "moment";
 import React from "react";
 import Image from "next/image";
 
-export default function HourlyWeather({ hourlyWeather }) {
+export default function HourlyWeather({ hourlyWeather, timezone }) {
   return (
     <div className="hourly">
       <div className="hourly__inner">
@@ -15,7 +15,9 @@ export default function HourlyWeather({ hourlyWeather }) {
                     index == 0 ? "hourly__time--now" : ""
                   }`}
                 >
-                  {index == 0 ? "Now" : moment.unix(weather.dt).format("LT")}
+                  {index == 0
+                    ? "Now"
+                    : moment.unix(weather.dt).tz(timezone).format("LT")}
                 </span>
 
                 <Image

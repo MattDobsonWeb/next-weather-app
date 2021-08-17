@@ -1,8 +1,8 @@
 import React from "react";
-import moment from "moment";
+import moment from "moment-timezone";
 import Image from "next/image";
 
-export default function WeeklyWeather({ weeklyWeather }) {
+export default function WeeklyWeather({ weeklyWeather, timezone }) {
   return (
     <div className="weekly">
       <h3 className="weekly__title">
@@ -20,7 +20,9 @@ export default function WeeklyWeather({ weeklyWeather }) {
               <div className="weekly__inner">
                 <div className="weekly__left-content">
                   <div>
-                    <h3>{moment.unix(weather.dt).format("dddd")}</h3>
+                    <h3>
+                      {moment.unix(weather.dt).tz(timezone).format("dddd")}
+                    </h3>
 
                     <h4>
                       <span>{weather.temp.max.toFixed(0)}&deg;C</span>
@@ -31,12 +33,16 @@ export default function WeeklyWeather({ weeklyWeather }) {
                   <div className="weekly__sun-times">
                     <div>
                       <span>Sunrise</span>
-                      <span>{moment.unix(weather.sunrise).format("LT")}</span>
+                      <span>
+                        {moment.unix(weather.sunrise).tz(timezone).format("LT")}
+                      </span>
                     </div>
 
                     <div>
                       <span>Sunset</span>
-                      <span>{moment.unix(weather.sunset).format("LT")}</span>
+                      <span>
+                        {moment.unix(weather.sunset).tz(timezone).format("LT")}
+                      </span>
                     </div>
                   </div>
                 </div>
