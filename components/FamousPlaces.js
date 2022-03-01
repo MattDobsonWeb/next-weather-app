@@ -48,7 +48,6 @@ export default function FamousPlaces() {
                       objectFit="cover"
                     />
                   </div>
-
                   <span>{place.name}</span>
                 </a>
               </Link>
